@@ -24,13 +24,13 @@
 		 {% for i in all_items %}
 		 		{% if i.completed %}
 				 <tr class = "table-secondary">	
-				 		<td class = "striker"> {{i.item}}</td>
+				 		<td class = "striker"><a href="{% url 'edit' i.id %}">{{i.item}}</a></td>
 				 		<td><a href="{% url 'crossOff' i.id %}">Uncross</a></td>
 				 		<td><a href="{% url 'delete' i.id %}">Delete</a></td>
 				 	<tr>
 				 {% else %}
 				 	<tr>	
-				 		<td> {{i.item}}</td>
+				 		<td><a href="{% url 'edit' i.id %}">{{i.item}}</a></td>
 				 		<td><a href="{% url 'crossOff' i.id %}">Cross Off</a></td>
 				 		<td><a href="{% url 'delete' i.id %}">Delete</a></td>
 				 	<tr>	
